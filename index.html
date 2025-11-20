@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Decorative floating shapes -->
+    <div class="decorative-shape shape-1"></div>
+    <div class="decorative-shape shape-2"></div>
+    <div class="decorative-shape shape-3"></div>
+    <div class="decorative-shape shape-4"></div>
+    <div class="decorative-shape shape-5"></div>
+    <div class="decorative-shape shape-6"></div>
+    <div class="decorative-shape shape-7"></div>
+    <div class="decorative-shape shape-8"></div>
+    <div class="decorative-shape shape-9"></div>
+    <div class="decorative-shape shape-10"></div>
+    <div class="decorative-shape shape-11"></div>
+    <div class="decorative-shape shape-12"></div>
+
+    <div class="container">
+        <h1>Password Strength Analyzer</h1>
+        <p class="description">Enter a password to analyze its strength and get security recommendations.</p>
+
+        <div class="input-section">
+            <label for="password-input">Enter Password:</label>
+            <div class="password-wrapper">
+                <input
+                    type="password"
+                    id="password-input"
+                    placeholder="Type your password here..."
+                    autocomplete="off"
+                >
+                <button type="button" id="toggle-visibility" aria-label="Toggle password visibility">
+                    <span id="eye-icon" class="eye-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <div class="strength-indicator">
+                <div class="strength-label">Strength: <span id="strength-rating">-</span></div>
+                <div class="strength-bar">
+                    <div id="strength-bar-fill"></div>
+                </div>
+            </div>
+
+            <div class="criteria-section">
+                <h3>Password Criteria</h3>
+                <ul id="criteria-list">
+                    <li id="length-check" class="unchecked">
+                        <span class="icon">✗</span>
+                        <span>At least 8 characters</span>
+                    </li>
+                    <li id="uppercase-check" class="unchecked">
+                        <span class="icon">✗</span>
+                        <span>Contains uppercase letter</span>
+                    </li>
+                    <li id="lowercase-check" class="unchecked">
+                        <span class="icon">✗</span>
+                        <span>Contains lowercase letter</span>
+                    </li>
+                    <li id="number-check" class="unchecked">
+                        <span class="icon">✗</span>
+                        <span>Contains number</span>
+                    </li>
+                    <li id="symbol-check" class="unchecked">
+                        <span class="icon">✗</span>
+                        <span>Contains symbol</span>
+                    </li>
+                    <li id="pattern-check" class="unchecked">
+                        <span class="icon">✗</span>
+                        <span>No repeated patterns</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="suggestions-section">
+                <h3>Suggestions</h3>
+                <ul id="suggestions-list">
+                    <li>Enter a password to see suggestions</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>Why Password Strength Matters</h3>
+            <p>Strong passwords are your first line of defense against unauthorized access. This tool helps you create passwords that resist common attack methods like brute force and dictionary attacks.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
